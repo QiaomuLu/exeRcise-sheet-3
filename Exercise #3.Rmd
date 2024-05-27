@@ -126,4 +126,20 @@ mean(deaths_20th_4e_war$Total.deaths....Deaths)
 mean(deaths_20th_4e_nonWar$Total.deaths....Deaths)
 ```
 
+## 4f)
+```{r 4f}
+ggplot(deaths_20th) + 
+  aes(
+    x = Year,
+    y = Total.deaths....Deaths
+  ) + 
+  geom_line() + 
+  labs(
+    x = "Year",
+    y = "Deaths",
+    title = "Total Death of Top 10 Causes",
+    subtitle = "in 20th century US",
+    caption = "https://github.com/owid/owid-datasets/tree/master/datasets/20th%20century%20deaths%20in%20US%20-%20CDC"
+  ) 
+```
 
