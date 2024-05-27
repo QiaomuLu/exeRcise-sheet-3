@@ -29,6 +29,11 @@ Weaknesses:
 2. Man need to use it explicitly, instead in the background.
 
 
+# Exercise 2
+Link to my repository:
+https://github.com/QiaomuLu/exeRcise-sheet-3
+
+
 # Exercise 3
 
 ## 3b)
