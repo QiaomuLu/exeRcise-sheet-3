@@ -106,10 +106,24 @@ deaths_20th <- read.csv("data/20th century deaths in US - CDC.csv")
 ```
 
 ## 4d)
-Question: Did the deaths in US increase during the World War II? Even if the war did not affect US on a large scale. Calculate the average number of deaths during World War II and non-World War II years. 
+Question: 
+
+This data set is compiled based on the list of top 10 causes of death.
+Did the deaths in US increase during the World War II? Even if the war did not affect US on a large scale. Calculate the average number of deaths during World War II and non-World War II years. 
 
 Tip: Use variable "Total.deaths....Deaths".
 
-Whether the World War II had influences to the deaths in a less affected country, which makes me curious.
+Whether the World War II had influences to the deaths in a less negative affected country, which makes me curious.
+
+## 4e)
+The average number of deaths in US during WW2 was 1408657, and not during WW2 was 1501690 in 20th century. The average deaths during WW2 years were less than non WW2. One possibility is, the medical resources, which were sold to the war zone, were produced in large quantity, and the deaths in US were decrease.
+```{r 4e}
+deaths_20th_4e_war <- deaths_20th %>%
+  filter(Year >= 1939 & Year <= 1945)
+deaths_20th_4e_nonWar <- deaths_20th %>%
+  filter(Year < 1939 | Year > 1945)
+mean(deaths_20th_4e_war$Total.deaths....Deaths)
+mean(deaths_20th_4e_nonWar$Total.deaths....Deaths)
+```
 
 
