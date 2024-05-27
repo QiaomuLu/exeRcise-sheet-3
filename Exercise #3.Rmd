@@ -15,7 +15,7 @@ library(tidyr)
 
 # Exercise 1
 
-## d)
+## 1d)
 Strengths: 
 
 1. Very hard to lose files with git.
@@ -27,4 +27,8 @@ Weaknesses:
 1. Not good for storing data.
 
 2. Man need to use it explicitly, instead in the background.
+
+
+# Exercise 2
+
 
