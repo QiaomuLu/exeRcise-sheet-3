@@ -32,23 +32,32 @@ Weaknesses:
 # Exercise 2
 
 ## 2b)
-The datatype of variable "Anzahl" in these data sets are not numeric, but character.
+The datatype of variable "anzahl" in these data sets are not numeric, but character.
 
-I used function "transform()". It changed the datatype of "Anzahl" successfully, however there were "4 oder weniger" as values in the raw dataframes, which turned into NA after I using "transform()".
+I used function "transform()". It changed the datatype of "anzahl" successfully, however there were "4 oder weniger" as values in the raw dataframes, which turned into NA after I using "transform()".
 ```{r 2b}
 vornamen_2022 <- read.csv("data/open_data_portal_2022.csv")
 vornamen_2023 <- read.csv("data/vornamen-muenchen-2023.csv")
-typeof(vornamen_2022$Anzahl)
-typeof(vornamen_2023$Anzahl)
 
-vornamen_2022_2b <- transform(vornamen_2022, Anzahl = as.numeric(Anzahl))
-vornamen_2023_2b <- transform(vornamen_2023, Anzahl = as.numeric(Anzahl))
+vornamen_2022_2b <- setNames(vornamen_2022, tolower(colnames(vornamen_2022)))
+vornamen_2023_2b <- setNames(vornamen_2023, tolower(colnames(vornamen_2023)))
+
+typeof(vornamen_2022_2b$anzahl)
+typeof(vornamen_2023_2b$anzahl)
+
+vornamen_2022_2b <- transform(vornamen_2022_2b, anzahl = as.numeric(anzahl))
+vornamen_2023_2b <- transform(vornamen_2023_2b, anzahl = as.numeric(anzahl))
 ```
 
 ## 2c)
 Not counting the babies with the first names, which have less than 5 owners, the babies born in Munich in 2022 was 9899 and in 2023 was 9277. Year 2022 had the bigger baby-boom.
 ```{r 2c}
-sum(vornamen_2022_2b$Anzahl, na.rm = TRUE)
-sum(vornamen_2023_2b$Anzahl, na.rm = TRUE)
+sum(vornamen_2022_2b$anzahl, na.rm = TRUE)
+sum(vornamen_2023_2b$anzahl, na.rm = TRUE)
 ```
 
+## 2d)
+```{r 2d}
+vornamen_2022_2d <- vornamen_2022_2b %>% mutate(year = 2022)
+vornamen_2023_2d <- vornamen_2023_2b %>% mutate(year = 2023)
+```
