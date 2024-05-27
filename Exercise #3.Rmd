@@ -99,6 +99,8 @@ ggplot(vornamen_combined_3f) +
 # Exercise 4
 
 ## 4a)
+Dataset Name: 20th century deaths in US - CDC.csv
+Link: https://github.com/owid/owid-datasets/blob/master/datasets/20th%20century%20deaths%20in%20US%20-%20CDC/20th%20century%20deaths%20in%20US%20-%20CDC.csv
 ```{r 4a}
-
+deaths_20th <- read.csv("data/20th century deaths in US - CDC.csv")
 ```
