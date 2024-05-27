@@ -61,3 +61,9 @@ sum(vornamen_2023_3b$anzahl, na.rm = TRUE)
 vornamen_2022_3d <- vornamen_2022_3b %>% mutate(year = 2022)
 vornamen_2023_3d <- vornamen_2023_3b %>% mutate(year = 2023)
 ```
+
+## 3e)
+```{r 3e}
+vornamen_combined_3e <- bind_rows(vornamen_2022_3d, vornamen_2023_3d)
+```
+
