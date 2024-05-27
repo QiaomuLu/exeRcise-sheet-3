@@ -31,4 +31,17 @@ Weaknesses:
 
 # Exercise 2
 
+## 2b)
+The datatype of variable "Anzahl" in these data sets are not numeric, but character.
+
+I used function "transform()". It changed the datatype of "Anzahl" successfully, however there were "4 oder weniger" as values in the raw dataframes, which turned into NA after I using "transform()".
+```{r 2b}
+vornamen_2022 <- read.csv("data/open_data_portal_2022.csv")
+vornamen_2023 <- read.csv("data/vornamen-muenchen-2023.csv")
+typeof(vornamen_2022$Anzahl)
+typeof(vornamen_2023$Anzahl)
+
+vornamen_2022_2b <- transform(vornamen_2022, Anzahl = as.numeric(Anzahl))
+vornamen_2023_2b <- transform(vornamen_2023, Anzahl = as.numeric(Anzahl))
+```
 
