@@ -98,9 +98,18 @@ ggplot(vornamen_combined_3f) +
 
 # Exercise 4
 
-## 4a)
+## 4c)
 Dataset Name: 20th century deaths in US - CDC.csv
 Link: https://github.com/owid/owid-datasets/blob/master/datasets/20th%20century%20deaths%20in%20US%20-%20CDC/20th%20century%20deaths%20in%20US%20-%20CDC.csv
-```{r 4a}
+```{r 4c}
 deaths_20th <- read.csv("data/20th century deaths in US - CDC.csv")
 ```
+
+## 4d)
+Question: Did the deaths in US increase during the World War II? Even if the war did not affect US on a large scale. Calculate the average number of deaths during World War II and non-World War II years. 
+
+Tip: Use variable "Total.deaths....Deaths".
+
+Whether the World War II had influences to the deaths in a less affected country, which makes me curious.
+
+
