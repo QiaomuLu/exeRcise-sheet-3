@@ -17,9 +17,14 @@ library(tidyr)
 
 ## d)
 Strengths: 
+
 1. Very hard to lose files with git.
+
 2. Great for collaboration.
 
 Weaknesses: 
+
 1. Not good for storing data.
-2. Man need to use it explicitly.
+
+2. Man need to use it explicitly, instead in the background.
+
