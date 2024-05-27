@@ -67,3 +67,31 @@ vornamen_2023_3d <- vornamen_2023_3b %>% mutate(year = 2023)
 vornamen_combined_3e <- bind_rows(vornamen_2022_3d, vornamen_2023_3d)
 ```
 
+## 3f)
+```{r 3f}
+vornamen_combined_3f <- vornamen_combined_3e %>%
+  select(vorname, anzahl) %>%
+  na.omit()
+
+vornamen_combined_3f <- 
+  aggregate(vornamen_combined_3f$anzahl,
+            list(vornamen_combined_3f$vorname),
+            FUN = sum) %>%
+  rename(anzahl = x, vorname = Group.1) %>%
+  arrange(desc(anzahl)) %>%
+  head(n = 10)
+
+ggplot(vornamen_combined_3f) + 
+  aes(
+    x = vorname,
+    y = anzahl
+  ) + 
+  geom_col() + 
+  labs(
+    x = "First Names",
+    y = "Owner Amount",
+    title = "Most Popular Names New Born Babies",
+    subtitle = "in Munich in year 2022 and 2023",
+    caption = "https://opendata.muenchen.de/dataset/vornamen-von-neugeborenen"
+  ) 
+```
