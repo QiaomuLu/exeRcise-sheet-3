@@ -95,3 +95,10 @@ ggplot(vornamen_combined_3f) +
     caption = "https://opendata.muenchen.de/dataset/vornamen-von-neugeborenen"
   ) 
 ```
+
+# Exercise 4
+
+## 4a)
+```{r 4a}
+
+```
